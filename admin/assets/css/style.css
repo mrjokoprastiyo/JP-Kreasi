@@ -1,0 +1,351 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f3f4f6;
+  color: #111827;
+  min-height: 100vh;
+}
+
+/* ===============================
+   TOPBAR
+================================ */
+.topbar {
+  height: 56px;
+  width: 100%;
+  background: #111827;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  /* position: relative; */
+  position: fixed;
+  z-index: 1000;
+}
+
+.topbar a {
+  color: #93c5fd;
+  text-decoration: none;
+  /* margin-left: 15px; */
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Jarak antar elemen (Nama, Garis, Logout) */
+    font-size: 14px;
+}
+
+.user-name {
+    font-weight: 500;
+}
+
+.divider {
+    /* color: #4b5563; */ /* Warna abu-abu halus untuk garis pemisah */
+    opacity: 0.5;
+}
+
+.auth-link {
+    color: #93c5fd;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* ===============================
+   LAYOUT
+================================ */
+.layout {
+  display: flex;
+  height: calc(100vh - 56px);
+  align-items: stretch;
+  overflow: hidden; /* sidebar tetap scrollable nanti */
+}
+
+/* ===============================
+   CONTENT AREA
+================================ */
+.user-content, .content {
+  flex: 1;
+  padding: 85px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-y: auto;      /* bikin content scrollable */
+  height: 100%;          /* isi height full layout */
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.sidebar {
+  width: 220px;
+  height: 100%;
+  background: #1f2937;
+  padding: 85px 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  overflow-y: auto; /* scroll sidebar jika konten tinggi */
+}
+
+.sidebar h3 {
+  color: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar a {
+  display: block;
+  padding: 8px 0;
+  color: #d1d5db;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #93c5fd;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   STATS GRID
+================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.stat-card h2 { margin: 8px 0 0; }
+.stat-card.success { border-left: 4px solid #22c55e; }
+.stat-card.danger  { border-left: 4px solid #ef4444; }
+
+/* ===============================
+   PANEL
+================================ */
+.panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+/* ===============================
+   TABLE
+================================ */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th { background: #f9fafb; }
+
+/* ===============================
+   BADGE
+================================ */
+.badge.active   { background: #22c55e; }
+.badge.pending  { background: #f59e0b; }
+.badge.expired  { background: #ef4444; }
+
+/* ===============================
+   BUTTON
+================================ */
+.btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover { background: #1d4ed8; }
+
+/* ===============================
+   PRODUCT GRID
+================================ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+/* ===============================
+   PRODUCT CARD
+================================ */
+.product-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all .25s ease;
+  border: 2px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.product-card.active { border-color: #4f46e5; }
+
+.product-header, .panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-header h3 { font-size: 1.05rem; margin: 0; }
+
+.product-card .badge {
+  font-size: 11px;
+  padding: 4px 8px;
+  background: #eef2ff;
+  color: #4f46e5;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.category { font-size: 13px; color: #6b7280; margin: 10px 0 5px; }
+.price { font-size: 1.3rem; font-weight: bold; margin-top: 10px; }
+.duration { font-size: 13px; color: #6b7280; margin-bottom: 15px; }
+
+.product-card .btn { text-align: center; background: #4f46e5; padding: 10px; border-radius: 10px; font-weight: 600; }
+.product-card .btn:hover { background: #4338ca; }
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  background: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 10px;
+}
+
+/* ===============================
+   RESPONSIVE MOBILE
+================================ */
+@media (max-width: 768px) {
+  /* layout kolom */
+  .layout {
+    flex-direction: column;
+    height: auto; /* biar content scroll normal */
+  }
+
+  /* sidebar toggle */
+  .sidebar  {
+    position: fixed;
+    /* top: 56px; */
+padding: 75px 15px;
+    left: 0;
+    width: 220px;
+    height: calc(100% - 56px);
+    transform: translateX(-100%);
+    z-index: 999;
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  /* menu toggle button muncul */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* content scrollable & padding */
+  .user-content, .content {
+    /* padding: 15px; */
+    padding: 75px 15px;
+    height: auto;
+    overflow: visible;
+    max-width: 100%;
+  }
+
+  /* stats grid jadi 1 kolom */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* product grid responsive */
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* tabel scroll horizontal */
+  .table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .table th, .table td {
+    white-space: nowrap;
+  }
+
+  /* panel padding lebih kecil */
+  .panel {
+    padding: 15px;
+  }
+
+  /* tombol btn full width lebih enak disentuh */
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
