@@ -1,0 +1,310 @@
+const SERVER_URL = "https://domain-bos.com/automation.php";
+
+/* ===============================
+   GLOBAL CACHE
+================================ */
+let CONFIG_CACHE = null;
+
+
+/* ===============================
+   CONFIG READER (CACHED)
+================================ */
+function getConfig() {
+
+  if (CONFIG_CACHE) return CONFIG_CACHE;
+
+  const sh = SpreadsheetApp.getActive()
+    .getSheetByName('CONFIG');
+
+  if (!sh)
+    throw new Error('Sheet CONFIG tidak ditemukan');
+
+  const values = sh
+    .getRange(1,1,sh.getLastRow(),2)
+    .getValues();
+
+  const cfg = {};
+
+  for (let i=0;i<values.length;i++) {
+    const k = values[i][0];
+    if (k) cfg[k] = values[i][1];
+  }
+
+  CONFIG_CACHE = cfg;
+
+  return cfg;
+}
+
+
+/* ===============================
+   COOLDOWN GUARD
+================================ */
+function canRun(sec) {
+
+  const props = PropertiesService.getDocumentProperties();
+
+  const last = Number(
+    props.getProperty('LAST_RUN') || 0
+  );
+
+  const now = Date.now();
+
+  if ((now-last)/1000 < sec)
+    return false;
+
+  props.setProperty('LAST_RUN', now);
+
+  return true;
+}
+
+
+/* ===============================
+   MENU UI
+================================ */
+function onOpen() {
+
+  SpreadsheetApp.getUi()
+    .createMenu('🚀 SYSTEM')
+    .addItem('🔑 Aktivasi API Key','setKey')
+    .addItem('⚡ Jalankan Automation','fireTrigger')
+    .addToUi();
+
+}
+
+
+/* ===============================
+   STORE API KEY (SECURE)
+================================ */
+function setKey(){
+
+  const ui = SpreadsheetApp.getUi();
+
+  const res = ui.prompt(
+    'Aktivasi',
+    'Masukkan API Key:',
+    ui.ButtonSet.OK
+  );
+
+  const key = res.getResponseText().trim();
+
+  if(!key) return;
+
+  PropertiesService
+    .getScriptProperties()
+    .setProperty('CLIENT_KEY',key);
+
+  ui.alert('✅ API Key tersimpan.');
+
+}
+
+
+/* ===============================
+   STATUS TRIGGER
+================================ */
+function onEdit(e){
+
+  try{
+
+    const cfg = getConfig();
+
+    if(cfg.AUTO_TRIGGER!=='ON') return;
+    if(cfg.TRIGGER_TYPE!=='STATUS') return;
+
+    const sh = e.range.getSheet();
+
+    const headers = sh
+      .getRange(1,1,1,sh.getLastColumn())
+      .getValues()[0];
+
+    const idx = headers.indexOf(cfg.STATUS_COLUMN);
+
+    if(idx===-1) return;
+
+    if(e.range.getColumn()!==idx+1) return;
+
+    if(e.value!==cfg.TRIGGER_VALUE) return;
+
+    if(!canRun(Number(cfg.COOLDOWN_SEC||60)))
+      return;
+
+    fireTrigger();
+
+  }catch(err){
+
+    console.error(err.message);
+
+  }
+
+}
+
+
+/* ===============================
+   TIME TRIGGER
+================================ */
+function setupTimeTrigger(){
+
+  ScriptApp.newTrigger('timeAutoTrigger')
+    .timeBased()
+    .everyHours(1)
+    .create();
+
+}
+
+
+function timeAutoTrigger(){
+
+  const cfg = getConfig();
+
+  if(cfg.AUTO_TRIGGER!=='ON') return;
+
+  if(cfg.TRIGGER_TYPE!=='TIME') return;
+
+  if(!canRun(Number(cfg.COOLDOWN_SEC||3600)))
+    return;
+
+  fireTrigger();
+
+}
+
+
+/* ===============================
+   SIGNATURE
+================================ */
+function signRequest(payload,key){
+
+  const ts = Math.floor(Date.now()/1000);
+
+  const nonce = Utilities.getUuid();
+
+  const body = JSON.stringify(payload);
+
+  const base = ts+"\n"+nonce+"\n"+body;
+
+  const raw = Utilities
+    .computeHmacSha256Signature(base,key);
+
+  const sig = Utilities.base64Encode(raw);
+
+  return {
+    ts:ts,
+    nonce:nonce,
+    signature:sig
+  };
+
+}
+
+
+/* ===============================
+   SERVICE STATUS CHECK
+================================ */
+function checkServiceStatus(text){
+
+  try{
+
+    const res = JSON.parse(text);
+
+    if(res.service && !res.service.service_active){
+
+      SpreadsheetApp.getUi().alert(
+
+        "⚠️ Layanan Tidak Aktif\n"+
+        (
+          res.service.trial_active
+          ? "Trial aktif sampai "+res.service.trial_ended_at
+          : "Silakan perpanjang layanan"
+        )
+
+      );
+
+      return false;
+
+    }
+
+  }catch(e){
+
+    console.error("JSON parse error");
+
+  }
+
+  return true;
+
+}
+
+
+/* ===============================
+   API REQUEST
+================================ */
+function callServer(payload,key){
+
+  const sign = signRequest(payload,key);
+
+  const options = {
+
+    method:"post",
+
+    contentType:"application/json",
+
+    headers:{
+      "X-API-KEY":key,
+      "X-TS":sign.ts,
+      "X-NONCE":sign.nonce,
+      "X-SIGNATURE":sign.signature
+    },
+
+    payload:JSON.stringify(payload),
+
+    muteHttpExceptions:true
+
+  };
+
+  return UrlFetchApp.fetch(SERVER_URL,options);
+
+}
+
+
+/* ===============================
+   MAIN TRIGGER
+================================ */
+function fireTrigger(){
+
+  const cfg = getConfig();
+
+  const key =
+    cfg.API_KEY ||
+    PropertiesService
+      .getScriptProperties()
+      .getProperty('CLIENT_KEY');
+
+  if(!key)
+    return SpreadsheetApp
+      .getUi()
+      .alert("API Key belum diisi");
+
+  const ss = SpreadsheetApp
+    .getActiveSpreadsheet();
+
+  SpreadsheetApp
+    .getActive()
+    .toast(
+      "🚀 Processing...",
+      "Automation",
+      5
+    );
+
+  const payload = {
+
+    spreadsheet_id:ss.getId(),
+
+    spreadsheet_name:ss.getName()
+
+  };
+
+  const res = callServer(payload,key);
+
+  const text = res.getContentText();
+
+  Logger.log(text);
+
+  checkServiceStatus(text);
+
+}

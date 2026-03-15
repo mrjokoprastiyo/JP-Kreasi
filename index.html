@@ -1,0 +1,1314 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="theme-color" content="#25d366"><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="format-detection" content="telephone=no"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><title>Jasa Desain Logo Profesional & Branding UMKM - JP Desainer Kreatif</title><meta name="description" content="Butuh logo bisnis yang profesional? JP Desainer Kreatif siap membantu branding usaha, desain logo eksklusif, dan banner promosi untuk UMKM dan perusahaan."><meta name="author" content="Joko Prasetyo"><meta name="robots" content="index,follow"><meta name="google-site-verification" content="kode-verifikasi-dari-google"><meta name="google-adsense-account" content="ca-pub-5389899763656501"><meta property="og:title" content="JP Desainer Kreatif – Desain Logo & Visual Branding"><meta property="og:description" content="Desain eksklusif, siap cetak besar, bukan stok massal. Cocok untuk brand kamu!"><meta property="og:image" content="https://jpkreasi.web.id/assets/logo-utama.png"><meta property="og:url" content="https://jpkreasi.web.id/"><meta property="fb:app_id" content="1254340695603685"><meta property="og:type" content="website"><link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="/assets/images/favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png"><link rel="apple-touch-icon" href="/assets/images/icon-192.png"><link rel="apple-touch-startup-image" href="/assets/images/splash-screen.png" media="(orientation: portrait)"><link rel="apple-touch-startup-image" href="/assets/images/splash-screen-landscape.png" media="(orientation: landscape)"><link rel="apple-touch-startup-image" href="/assets/images/splash-1242x2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"><link rel="preload" href="/assets/fonts/Ubuntu-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"><link rel="preload" href="/assets/fonts/Angelface.otf" as="font" type="font/otf" crossorigin="anonymous"><link rel="preload" as="image" href="/assets/images/logo.png"><link rel="preload" as="image" href="/assets/images/Promosi.jpg"><link rel="manifest" href="/manifest.json"><style>
+
+/* ===============================
+   FONT
+================================ */
+
+    @font-face {
+      font-family: 'Ubuntu';
+      src: url('fonts/Ubuntu-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Angelface';
+      src: url('fonts/Angelface.otf') format('opentype');
+      font-display: swap;
+    }
+
+/* ===============================
+   GLOBAL
+================================ */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:sans-serif;
+  background:#fff;
+  color:#333;
+  line-height:1.6;
+  transition:background .3s,color .3s;
+}
+
+body.dark{
+  background:#1e1e1e;
+  color:#eee;
+}
+
+/* ===============================
+   TOP BAR
+================================ */
+
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:.6rem 1rem;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  position:sticky;
+  top:0;
+  z-index:10;
+  transition:background .3s;
+}
+
+body.dark .top-bar{
+  background:#2c2c2c;
+  border-color:#444;
+}
+
+.logo{
+  height:42px;
+}
+
+/* ===============================
+   NAVIGATION
+================================ */
+
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+.nav-toggle span{
+  width:22px;
+  height:3px;
+  background:#333;
+  margin:3px 0;
+  transition:all .3s ease;
+}
+
+body.dark .nav-toggle span{
+  background:#eee;
+}
+
+.nav-menu{
+  display:flex;
+  gap:.8rem;
+  transition:all .3s ease;
+}
+
+.nav-menu a{
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+  font-size:.85rem;
+  transition:color .3s ease;
+}
+
+.nav-menu a:hover{
+  color:#25d366;
+}
+
+body.dark .nav-menu a{
+  color:#eee;
+}
+
+body.dark .nav-menu a:hover{
+  color:#25d366;
+}
+
+/* ===============================
+   MOBILE MENU
+================================ */
+
+@media screen and (max-width:640px){
+
+  .top-bar{
+    flex-wrap:wrap;
+  }
+
+  .nav-toggle{
+    display:flex;
+  }
+
+  .nav-menu{
+    width:100%;
+    flex-direction:column;
+    display:none;
+    margin-top:.8rem;
+    gap:.5rem;
+    opacity:0;
+    transform:translateY(-10px);
+    pointer-events:none;
+  }
+
+  .nav-menu.active{
+    display:flex;
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:all;
+  }
+
+}
+
+/* ===============================
+   TITLE / HERO
+================================ */
+/* HERO SECTION */
+
+.hero{
+  text-align:center;
+  padding:80px 20px;
+  max-width:900px;
+  margin:auto;
+  background:linear-gradient(180deg,#ffffff,#f5f7fb);
+}
+
+body.dark .hero{
+  background:linear-gradient(180deg,#1e1e1e,#2a2a2a);
+}
+/* BRAND */
+
+.hero-brandX{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:25px;
+}
+
+.hero-logoX{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+}
+
+.hero-nameX{
+  font-size:34px;
+  font-weight:bold;
+}
+
+/* BRAND */
+
+/* BRAND CONTAINER */
+
+.hero-brand{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:30px;
+}
+
+/* LOGO */
+
+.hero-logo{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  margin-top:2px;
+  border-radius:50%;
+}
+
+/* BRAND TEXT */
+
+.hero-name{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  line-height:1.05;
+}
+
+/* BRAND NAME */
+
+.hero-name .ubuntu{
+  font-family:'Ubuntu',sans-serif;
+  font-weight:700;
+  font-size:38px;
+  letter-spacing:.3px;
+}
+
+/* TAGLINE */
+
+.hero-name .angelface{
+  font-family:'Ubuntu',sans-serif;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-top:4px;
+  color:#25d366;
+}
+
+/* TITLE */
+
+.hero-title{
+  font-size:40px;
+  line-height:1.25;
+  margin-bottom:20px;
+  color:#222;
+}
+
+/* SUBTITLE */
+
+.hero-subtitle{
+  font-size:18px;
+  line-height:1.6;
+  color:#555;
+  max-width:700px;
+  margin:auto;
+  margin-bottom:35px;
+}
+
+/* CTA */
+
+.hero-cta{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  padding-top: 15px;
+}
+
+.btn-primary{
+  background:#25d366;
+  color:#fff;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.25s;
+}
+
+.btn-primary:hover{
+  background:#1fb857;
+}
+
+.btn-secondary{
+  border:2px solid #25d366;
+  color:#25d366;
+  padding:10px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.25s;
+}
+
+.btn-secondary:hover{
+  background:#25d366;
+  color:#fff;
+}
+
+/* DARK MODE */
+
+body.dark .hero-title{
+  color:#fff;
+}
+
+body.dark .hero-subtitle{
+  color:#ccc;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hero-title{
+  font-size:30px;
+}
+
+.hero-namex{
+  font-size:28px;
+}
+
+.hero-logox{
+  width:58px;
+  height:58px;
+}
+
+.hero-subtitle{
+  font-size:16px;
+}
+
+}
+
+/* ===============================
+   SECTION
+================================ */
+
+.section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+  scroll-margin-top:160px;
+}
+
+.section h2{
+  font-size:28px;
+  margin-bottom:15px;
+  text-align:center;
+  color:#222;
+}
+
+body.dark .section h2{
+  color:#ddd;
+}
+
+.section p{
+  max-width:750px;
+  margin:auto;
+  text-align:center;
+}
+
+/* ===============================
+   LAYANAN
+================================ */
+
+.layanan{
+  background:#f7f7f7;
+  color:#333;
+}
+
+body.dark .layanan{
+  background:#2b2b2b;
+  color:#eee;
+}
+
+.layanan ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.layanan li{
+  margin-bottom:1.2rem;
+}
+
+.layanan p{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 1.5rem;
+}
+
+/* ===============================
+   GRID LAYANAN
+================================ */
+
+.layanan-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  margin-top:35px;
+  max-width:900px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* card */
+
+.layanan-card{
+  background:#fff;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  transition:all .3s ease;
+  text-align:center;
+}
+
+.layanan-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.layanan-card h3{
+  font-size:20px;
+  margin-bottom:10px;
+  color:#222;
+}
+
+.layanan-card p{
+  font-size:15px;
+  color:#555;
+  line-height:1.6;
+  margin-bottom: 8px;
+}
+
+/* CTA centered */
+
+.layanan-cta{
+  display:inline-block;
+  margin-top:16px;
+  padding:9px 16px;
+  font-size:14px;
+  text-decoration:none;
+  border-radius:8px;
+  background:#25d366;
+  color:#fff;
+  font-weight:600;
+  transition:.25s;
+}
+
+.layanan-cta:hover{
+  background:#1fb857;
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.layanan-grid{
+  grid-template-columns:1fr;
+}
+
+}
+
+/* ===============================
+   GRID KEUNGGULAN
+================================ */
+
+.fitur-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:35px;
+}
+
+.fitur-item{
+  background:#fafafa;
+  padding:25px;
+  border-radius:14px;
+  text-align:center;
+  transition:all .3s ease;
+  border:1px solid #eee;
+}
+
+.fitur-item:hover{
+  background:#fff;
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+.fitur-item img{
+  width:48px;
+  height:48px;
+  margin-bottom:15px;
+}
+
+.fitur-item h3{
+  font-size:18px;
+  margin-bottom:10px;
+  color:#222;
+}
+
+.fitur-item p{
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
+}
+
+.fitur-item img{
+width:44px;
+height:44px;
+margin-bottom:15px;
+filter: grayscale(20%);
+opacity:0.9;
+}
+
+.fitur-item:hover img{
+transform:scale(1.08);
+opacity:1;
+}
+
+/* ===============================
+   PORTFOLIO SLIDER
+================================ */
+
+.produk-container{
+  display:flex;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  height:310px;
+  position:relative;
+}
+
+.produk-item{
+  flex:0 0 100%;
+  scroll-snap-align:start;
+  text-align:center;
+  padding:1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.produk-item object,
+.produk-item img{
+  max-height:300px;
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+}
+
+.produk-item p{
+  margin-top:.5rem;
+  color:#555;
+}
+
+body.dark .produk-item p{
+  color:#ccc;
+}
+
+.produk-nav{
+  text-align:center;
+  margin-top:1rem;
+}
+
+.produk-nav span{
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#ccc;
+  margin:0 5px;
+}
+
+.produk-nav span.active{
+  background:#25d366;
+}
+
+.produk-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:2rem;
+  color:#25d366;
+  background:#fff;
+  border-radius:50%;
+  padding:.3rem .6rem;
+  cursor:pointer;
+  z-index:5;
+}
+
+.produk-arrow.left{
+  left:10px;
+}
+
+.produk-arrow.right{
+  right:10px;
+}
+
+/* ===============================
+   TESTIMONI
+================================ */
+
+.section.testimoni p{
+  margin-bottom:1.2rem;
+  padding:.8rem 1rem;
+  border:1px solid #ddd;
+  border-radius:6px;
+  background:#f9f9f9;
+}
+
+body.dark .section.testimoni p{
+  border-color:#444;
+  background:#2a2a2a;
+}
+
+/* ===============================
+   KENAPA
+================================ */
+
+.section.kenapa{
+  background:#f5f5f5;
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  text-align:center;
+}
+
+body.dark .section.kenapa{
+  background:#2a2a2a;
+  color:#eee;
+}
+
+/* GRID */
+
+.section.kenapa ul{
+  max-width:800px;
+  margin:35px auto 0;
+  padding:0;
+  list-style:none;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+/* ITEM */
+
+.section.kenapa li{
+  position:relative;
+  text-align:left;
+
+  padding:16px 16px 16px 38px;
+  line-height:1.6;
+
+  background:#fff;
+  border-radius:10px;
+  border:1px solid #eee;
+}
+
+/* icon */
+
+.section.kenapa li::before{
+  content:"✔";
+  position:absolute;
+  left:14px;
+  top:16px;
+
+  color:#25d366;
+  font-weight:bold;
+}
+
+/* dark mode */
+
+body.dark .section.kenapa li{
+  background:#333;
+  border-color:#444;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.section.kenapa ul{
+  grid-template-columns:1fr;
+}
+
+}
+
+/* ===============================
+   KONTAK
+================================ */
+
+.kontak{
+  background:#fafafa;
+}
+
+/* wrapper utama */
+
+.kontak-wrapper{
+  margin-top:30px;
+}
+
+/* info tengah */
+
+.kontak-wrapper-info{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 40px;
+}
+
+.kontak-text p{
+  color:#555;
+  line-height:1.7;
+  margin-top:12px;
+}
+
+.kontak-info{
+  margin-top:15px;
+}
+
+.kontak-info p{
+  font-size:14px;
+  color:#666;
+  margin:4px 0;
+}
+
+/* GRID KONTAK */
+
+.kontak-box{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* CARD */
+
+.kontak-card{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  padding:18px;
+  border-radius:12px;
+  text-decoration:none;
+
+  background:#fff;
+  border:1px solid #eee;
+
+  transition:all .25s ease;
+}
+
+/* isi card */
+
+.kontak-card img{
+  width:26px;
+  height:26px;
+}
+
+.kontak-card strong{
+  display:block;
+  font-size:15px;
+  color:#222;
+}
+
+.kontak-card span{
+  font-size:13px;
+  color:#666;
+}
+
+/* hover */
+
+.kontak-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+/* warna */
+
+.kontak-card.wa:hover{
+  border-color:#25d366;
+}
+
+.kontak-card.telegram:hover{
+  border-color:#0088cc;
+}
+
+.kontak-card.messenger:hover{
+  border-color:#0078ff;
+}
+
+.kontak-card.email:hover{
+  border-color:#444;
+}
+
+/* mobile */
+
+@media(max-width:600px){
+
+.kontak-box{
+  grid-template-columns:1fr;
+}
+
+}
+
+/* ===============================
+   CTA
+================================ */
+
+.cta{
+  text-align:center;
+  margin:2rem 0;
+}
+
+.cta a{
+  background:#25d366;
+  color:#fff;
+  padding:.8rem 1.5rem;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+  font-size:1rem;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+
+footerX{
+  text-align:center;
+  padding:1rem;
+  font-size:.9rem;
+  color:#999;
+}
+
+.footer{
+background:#111;
+color:#ccc;
+padding:50px 20px 20px;
+}
+
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+}
+
+.footer h3{
+color:#fff;
+margin-bottom:10px;
+}
+
+.footer h4{
+color:#fff;
+margin-bottom:12px;
+font-size:16px;
+}
+
+.footer-links a{
+display:block;
+color:#bbb;
+text-decoration:none;
+margin-bottom:8px;
+font-size:14px;
+}
+
+.footer-links a:hover{
+color:#fff;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #333;
+font-size:14px;
+color:#888;
+}
+
+.footer-contact {
+  margin-top: 20px;
+}
+
+.footer-contact a{
+color:#bbb;
+text-decoration:none;
+}
+
+.footer-contact a:hover{
+color:#fff;
+}
+
+.footer-links a{
+display:block;
+color:#bbb;
+text-decoration:none;
+margin-bottom:8px;
+font-size:14px;
+transition:.2s;
+}
+
+.footer-links a:hover{
+color:#25d366;
+transform:translateX(2px);
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+/* ===============================
+   DARK TOGGLE
+================================ */
+
+.dark-toggle{
+  position:fixed;
+  bottom:1rem;
+  right:1rem;
+  background:#25d366;
+  color:#fff;
+  padding:.5rem 1rem;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  font-size:.8rem;
+  z-index:20;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:768px){
+
+  .section{
+    padding:60px 20px;
+  }
+
+  .section h2{
+    font-size:24px;
+  }
+
+  .layanan-card{
+    padding:22px;
+  }
+
+  .fitur-item{
+    padding:22px;
+  }
+
+}
+
+</style><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)})(window,document,'script','dataLayer','GTM-5D58B5RW');</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5389899763656501" crossorigin="anonymous"></script><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Berapa harga jasa desain logo?","acceptedAnswer":{"@type":"Answer","text":"Harga mulai 50 ribu hingga paket branding lengkap. Konsultasi gratis lewat WhatsApp."}},{"@type":"Question","name":"File desain apa yang saya dapat?","acceptedAnswer":{"@type":"Answer","text":"Anda mendapatkan file PNG, JPG, dan vektor siap cetak (PDF/AI/SVG)."}}]},{"@type":"LocalBusiness","name":"JP Desainer Kreatif","url":"https://jpkreasi.web.id/","image":"https://jpkreasi.web.id/assets/logo-utama.png","telephone":"+6285212887849","address":{"@type":"PostalAddress","addressCountry":"ID"},"priceRange":"Rp","description":"Jasa desain logo, banner, sablon, branding visual untuk UMKM dan perusahaan."}]}</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5D58B5RW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>  <!-- Top bar dan nav tetap --><!-- ... -->
+  <div class="top-bar">
+    <img src="assets/logo-utama.png" alt="Logo JP" class="logo" />
+    <div class="nav-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-menu" id="navMenu">
+      <a href="#home" onclick="closeMenu()">Home</a>
+      <a href="#layanan" onclick="closeMenu()">Layanan Kami</a>
+      <a href="#produk" onclick="closeMenu()">Portfolio</a>
+      <a href="#testimoni" onclick="closeMenu()">Testimoni</a>
+      <a href="#kenapa" onclick="closeMenu()">Kenapa Kami</a>
+      <a href="#kontak" onclick="closeMenu()">Kontak</a>
+    </div>
+  </div>
+
+<header class="hero section" id="home">
+
+  <div class="hero-brand">
+    <img src="assets/logo.png" alt="JP Kreasi Logo" class="hero-logo">
+    <div class="hero-name">
+      <span class="ubuntu">JP Kreasi</span>
+      <span class="angelface">Digital Solutions</span>
+    </div>
+  </div>
+
+  <h1 class="hero-title">
+    Solusi Desain, Chatbot, dan Automation untuk Bisnis Modern
+  </h1>
+
+  <p class="hero-subtitle">
+    Kami membantu pelaku usaha membangun identitas visual, 
+    mengotomatiskan pekerjaan digital, serta meningkatkan 
+    komunikasi pelanggan melalui sistem chatbot yang terintegrasi.
+  </p>
+
+  <div class="hero-cta">
+    <a href="#layanan" class="btn-primary">Lihat Layanan</a>
+    <a href="#kontak" class="btn-secondary">Hubungi Kami</a>
+  </div>
+
+</header>
+
+  <!-- Portfolio, Testimoni, dan lainnya tetap --><!-- ... -->
+<section class="section layanan" id="layanan">
+
+<h2>Layanan Utama</h2>
+
+<div class="layanan-grid">
+
+<div class="layanan-card">
+<h3>🎨 Desain</h3>
+<p>
+Pembuatan logo, banner, kemasan produk, dan berbagai 
+desain visual untuk memperkuat identitas bisnis Anda.
+</p>
+
+<a href="products.php?flow=DESIGN_ORDER" class="layanan-cta">Lihat Layanan</a>
+
+</div>
+
+<div class="layanan-card">
+<h3>🤖 Chatbot Website</h3>
+<p>
+Chatbot yang terpasang langsung di website untuk 
+membantu menjawab pertanyaan pengunjung secara otomatis.
+</p>
+
+<a href="products.php?flow=CHATBOT_WEB" class="layanan-cta">Lihat Layanan</a>
+
+</div>
+
+<div class="layanan-card">
+<h3>💬 Chatbot Channel</h3>
+<p>
+Auto-reply dan sistem chatbot untuk berbagai channel seperti 
+Facebook Messenger, WhatsApp, Telegram, dan komentar media sosial.
+</p>
+
+<a href="products.php?flow=CHATBOT_CHANNEL" class="layanan-cta">Lihat Layanan</a>
+
+</div>
+
+<div class="layanan-card">
+<h3>⚙️ Automation</h3>
+<p>
+Sistem automation berbasis Google Sheet yang dapat 
+menghubungkan data ke berbagai layanan dan API.
+</p>
+
+<a href="products.php?flow=AUTOMATION_NOTIFICATION" class="layanan-cta">Lihat Layanan</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="produk"><h2>Portfolio Desain</h2><div style="position:relative;"><span class="produk-arrow left" onclick="scrollProduk(-1)">&#10094;</span><div class="produk-container" id="produkSlider"><div class="produk-item"><a href="https://jpkreasi.web.id/aquent.svg" target="_blank"><img src="assets/images/aquent.webp" alt="Logo Aquent Jobs" loading="lazy" decoding="async"></a><p>Logo Aquent Jobs</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview8.svg" target="_blank"><img src="assets/images/preview8.webp" alt="Logo HBS Team" loading="lazy" decoding="async"></a><p>Logo HBS Team</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview9.svg" target="_blank"><img src="assets/images/preview9.webp" alt="Logo Zaliphotography" loading="lazy" decoding="async"></a><p>Logo Zaliphotography</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview10.svg" target="_blank"><img src="assets/images/preview10.webp" alt="Logo X-Store" loading="lazy" decoding="async"></a><p>Logo X-Store</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview11.svg" target="_blank"><img src="assets/images/preview11.webp" alt="Logo Saing Tengah" loading="lazy" decoding="async"></a><p>Logo Saing Tengah</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview12.svg" target="_blank"><img src="assets/images/preview12.webp" alt="Logo FAS" loading="lazy" decoding="async"></a><p>Logo FAS</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview1.svg" target="_blank"><img src="assets/images/preview1.webp" alt="Banner Jasa Las" loading="lazy" decoding="async"></a><p>Banner Jasa Las</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview2.svg" target="_blank"><img src="assets/images/preview2.webp" alt="Banner Kedai Mania" loading="lazy" decoding="async"></a><p>Banner Kedai Mania</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview3.svg" target="_blank"><img src="assets/images/preview3.webp" alt="Banner Warung Teh Lina" loading="lazy" decoding="async"></a><p>Banner Warung Teh Lina</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview4.svg" target="_blank"><img src="assets/images/preview4.webp" alt="Desain Sablon Baju" loading="lazy" decoding="async"></a><p>Desain Sablon Baju</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview5.svg" target="_blank"><img src="assets/images/preview5.webp" alt="Logo Masjid" loading="lazy" decoding="async"></a><p>Logo Masjid</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview6.svg" target="_blank"><img src="assets/images/preview6.webp" alt="Logo Pecinta Burung" loading="lazy" decoding="async"></a><p>Logo Pecinta Burung</p></div><div class="produk-item"><a href="https://jpkreasi.web.id/preview7.svg" target="_blank"><img src="assets/images/preview7.webp" alt="Logo Hammah Rabbits" loading="lazy" decoding="async"></a><p>Logo Hammah Rabbits</p></div></div><span class="produk-arrow right" onclick="scrollProduk(1)">&#10095;</span></div><div class="produk-nav" id="produkNav"><span class="active"></span><span></span></div></section>
+
+  <section class="section testimoni" id="testimoni">
+    <h2>Testimoni Pelanggan</h2>
+    <p><em>"Makasih bang.
+Bermanfaat banget buat saya.
+Semoga Allah membalas kebaikan Abang. Aamiin🤲</em> – Aris SHd</p>
+    <p><em>"Desain dari JP sangat keren dan cepat jadi, cocok banget untuk promosi usaha saya."</em> – Adi</p>
+    <p><em>"Terima Kasih Bosku 🙏. Keren habis 👍</em> – Suare Lombok</p>
+    <p><em>"Desainnya beda dari yang lain, profesional banget dan cepat merespons revisi!"</em> – Andra</p>
+  </section>
+
+<section class="section keunggulan">
+
+<h2>Keunggulan Layanan Kami</h2>
+
+<div class="fitur-grid">
+
+<div class="fitur-item">
+<img src="assets/icon/icon-custom.svg" alt="">
+<h3>Solusi Sesuai Kebutuhan</h3>
+<p>
+Setiap layanan dibuat sesuai kebutuhan bisnis Anda, 
+bukan sekadar template umum.
+</p>
+</div>
+
+<div class="fitur-item">
+<img src="assets/icon/icon-automation.svg" alt="">
+<h3>Efisiensi Kerja</h3>
+<p>
+Automation membantu mengurangi pekerjaan manual 
+dan meningkatkan efisiensi operasional bisnis.
+</p>
+</div>
+
+<div class="fitur-item">
+<img src="assets/icon/icon-chatbot.svg" alt="">
+<h3>Layanan Pelanggan Otomatis</h3>
+<p>
+Chatbot membantu menjawab pertanyaan pelanggan 
+secara cepat tanpa harus selalu online.
+</p>
+</div>
+
+<div class="fitur-item">
+<img src="assets/icon/icon-scalable.svg" alt="">
+<h3>Sistem Fleksibel</h3>
+<p>
+Solusi yang kami buat dapat dikembangkan 
+seiring pertumbuhan bisnis Anda.
+</p>
+</div>
+
+<div class="fitur-item">
+<img src="assets/icon/icon-fast.svg" alt="">
+<h3>Proses Cepat</h3>
+<p>
+Komunikasi mudah dan proses pengerjaan 
+yang efisien tanpa birokrasi rumit.
+</p>
+</div>
+
+<div class="fitur-item">
+<img src="assets/icon/icon-support.svg" alt="">
+<h3>Dukungan Berkelanjutan</h3>
+<p>
+Kami siap membantu jika Anda membutuhkan 
+pengembangan atau penyesuaian sistem.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section kenapa" id="kenapa">
+
+  <h2>Mengapa Memilih JP Kreasi?</h2>
+
+  <ul>
+    <li>Solusi dibuat langsung oleh developer, tanpa perantara.</li>
+    <li>Sistem dapat disesuaikan dengan alur bisnis Anda.</li>
+    <li>Integrasi mudah dengan website, chatbot, maupun automation.</li>
+    <li>Komunikasi langsung sehingga proses pengerjaan lebih jelas.</li>
+    <li>Dukungan pengembangan jika bisnis Anda berkembang.</li>
+    <li>Automation membantu bisnis berjalan lebih efisien tanpa pekerjaan manual berulang.</li>
+  </ul>
+
+</section>
+
+  <!-- Kontak dan footer tetap --><!-- ... -->
+
+<section class="section kontak" id="kontak">
+
+  <div class="kontak-wrapper">
+
+    <!-- INFO -->
+    <div class="kontak-wrapper-info">
+
+      <div class="kontak-text">
+        <h2>Hubungi Kami</h2>
+        <p>
+          Tidak menemukan layanan yang anda cari atau berdiskusi mengenai kebutuhan
+          sistem, automation, chatbot atau desain visual untuk bisnis Anda?
+          Silakan hubungi kami melalui kontak berikut.
+        </p>
+      </div>
+    </div>
+
+    <!-- GRID KONTAK -->
+    <div class="kontak-box">
+
+      <a href="https://wa.me/6285212887849" class="kontak-card wa" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/25d366/whatsapp.png" alt="">
+        <div>
+          <strong>WhatsApp</strong>
+          <span>+62 852 1288 7849</span>
+        </div>
+      </a>
+
+      <a href="https://t.me/jokoprastiyo" class="kontak-card telegram" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/0088cc/telegram.png" alt="">
+        <div>
+          <strong>Telegram</strong>
+          <span>@jokoprastiyo</span>
+        </div>
+      </a>
+
+      <a href="https://m.me/mr.jokoprastiyo" class="kontak-card messenger" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/0078FF/facebook-messenger.png" alt="">
+        <div>
+          <strong>Messenger</strong>
+          <span>Joko Prasetyo</span>
+        </div>
+      </a>
+
+      <a href="mailto:hello@jpkreasi.web.id" class="kontak-card email">
+        <img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="">
+        <div>
+          <strong>Email</strong>
+          <span>hello@jpkreasi.web.id</span>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+
+<div class="footer-container">
+
+<div class="footer-brand">
+<h3>JP Kreasi</h3>
+
+<p>
+Solusi desain, chatbot, dan automation untuk membantu
+bisnis berkembang di era digital.
+</p>
+
+<p class="footer-contact">
+📍 Solok, Sumatera Barat – Indonesia<br>
+✉ <a href="mailto:hello@jpkreasi.web.id">hello@jpkreasi.web.id</a>
+</p>
+
+</div>
+
+<nav class="footer-links">
+<h4>Navigation</h4>
+<a href="#home">Home</a>
+<a href="#layanan">Layanan</a>
+<a href="#produk">Portfolio</a>
+<a href="#testimoni">Testimoni</a>
+<a href="#kontak">Kontak</a>
+</nav>
+
+<nav class="footer-links">
+<h4>Legal</h4>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="terms-of-service.html">Terms of Service</a>
+<a href="cookie-policy.html">Cookie Policy</a>
+<a href="acceptable-use-policy.html">Acceptable Use Policy</a>
+<a href="data-deletion.html">Data Deletion</a>
+</nav>
+
+</div>
+
+<div class="footer-bottom">
+© <span id="year"></span> JP Kreasi – Digital Solutions
+<br>
+Built with automation, chatbot, and design expertise.
+</div>
+
+</footer>
+
+  <button class="dark-toggle" onclick="toggleDark()">🌙 Mode</button>
+<script>
+  // === Navigasi Menu ===
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('active');
+  }
+  function closeMenu() {
+    document.getElementById('navMenu').classList.remove('active');
+  }
+
+  // === Mode Gelap ===
+  function toggleDark() {
+    document.body.classList.toggle('dark');
+  }
+
+  // === Slider Produk ===
+  const slider = document.getElementById('produkSlider');
+  const nav = document.getElementById('produkNav');
+  const items = slider.querySelectorAll('.produk-item');
+  let currentSlide = 0;
+
+  // Bersihkan nav dots terlebih dahulu
+  nav.innerHTML = "";
+
+  // Buat dot navigasi otomatis
+  items.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => scrollToSlide(i));
+    nav.appendChild(dot);
+  });
+
+  function scrollToSlide(i) {
+    currentSlide = i;
+    slider.scrollTo({ left: items[i].offsetLeft, behavior: 'smooth' });
+    updateDots();
+  }
+
+  function scrollProduk(dir) {
+    currentSlide += dir;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= items.length) currentSlide = items.length - 1;
+    scrollToSlide(currentSlide);
+  }
+
+  function updateDots() {
+    const dots = nav.querySelectorAll('span');
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+  }
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+

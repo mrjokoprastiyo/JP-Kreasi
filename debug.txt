@@ -1,0 +1,1183 @@
+[2026-03-05 02:04:24] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 02:04:48] Array
+(
+    [RAW_INPUT] => {"visitor_id":"v1p7l5bfgn","message":"__load__"}
+)
+
+[2026-03-05 02:09:55] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 02:10:10] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 02:13:05] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 02:13:33] Array
+(
+    [RAW_INPUT] => {"visitor_id":"v1p7l5bfgn","message":"__load__"}
+)
+
+[2026-03-05 05:48:55] Array
+(
+    [RAW_INPUT] => {"visitor_id":"v1p7l5bfgn","message":"__load__"}
+)
+
+[2026-03-05 05:49:01] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:49:39] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:49:55] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Hai"}
+)
+
+[2026-03-05 05:49:57] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Hai
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Bentar ya
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Tidak apa-apa, silakan ambil waktu Anda. Saya di sini untuk membantu kapan pun Anda siap.
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Bingung mau tanya apa
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Tidak apa-apa, kadang-kadang kita perlu waktu untuk memikirkan pertanyaan yang tepat. Jika Anda memiliki topik tertentu yang ingin dibahas atau hanya ingin tahu tentang sesuatu, saya bisa membantu Anda merumuskan pertanyaan. Atau, jika Anda hanya ingin mengobrol, saya juga bisa mendengarkan!
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini?
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hau
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 200
+            [error] => 
+            [raw] => {"response_id":"ebd6a4a5-dc8f-4024-a081-644b813d448b","text":"Hai! Ada yang bisa saya bantu hari ini? 😊","generation_id":"67eb59a9-116e-43f1-af50-26de4a30cee6","chat_history":[{"role":"USER","message":"Bentar ya"},{"role":"CHATBOT","message":"Tidak apa-apa, silakan ambil waktu Anda. Saya di sini untuk membantu kapan pun Anda siap."},{"role":"USER","message":"Bingung mau tanya apa"},{"role":"CHATBOT","message":"Tidak apa-apa, kadang-kadang kita perlu waktu untuk memikirkan pertanyaan yang tepat. Jika Anda memiliki topik tertentu yang ingin dibahas atau hanya ingin tahu tentang sesuatu, saya bisa membantu Anda merumuskan pertanyaan. Atau, jika Anda hanya ingin mengobrol, saya juga bisa mendengarkan!"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini?"},{"role":"USER","message":"Hau"},{"role":"CHATBOT","message":"Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"}],"finish_reason":"COMPLETE","meta":{"api_version":{"version":"1"},"billed_units":{"input_tokens":158,"output_tokens":13},"tokens":{"input_tokens":728,"output_tokens":15},"cached_tokens":0}}
+        )
+
+)
+
+[2026-03-05 05:49:57] Array
+(
+    [AI_INPUT] => Hai
+    [AI_REPLY] => Hai! Ada yang bisa saya bantu hari ini? 😊
+)
+
+[2026-03-05 05:50:05] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:50:08] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:51:04] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:51:07] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:51:12] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Hai"}
+)
+
+[2026-03-05 05:51:13] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Hai
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Bingung mau tanya apa
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Tidak apa-apa, kadang-kadang kita perlu waktu untuk memikirkan pertanyaan yang tepat. Jika Anda memiliki topik tertentu yang ingin dibahas atau hanya ingin tahu tentang sesuatu, saya bisa membantu Anda merumuskan pertanyaan. Atau, jika Anda hanya ingin mengobrol, saya juga bisa mendengarkan!
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini?
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hau
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 200
+            [error] => 
+            [raw] => {"response_id":"65243aba-b7f3-4537-be97-0820d100f583","text":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊","generation_id":"fc3e953c-5da1-4621-a1b1-283f8a4f1022","chat_history":[{"role":"USER","message":"Bingung mau tanya apa"},{"role":"CHATBOT","message":"Tidak apa-apa, kadang-kadang kita perlu waktu untuk memikirkan pertanyaan yang tepat. Jika Anda memiliki topik tertentu yang ingin dibahas atau hanya ingin tahu tentang sesuatu, saya bisa membantu Anda merumuskan pertanyaan. Atau, jika Anda hanya ingin mengobrol, saya juga bisa mendengarkan!"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini?"},{"role":"USER","message":"Hau"},{"role":"CHATBOT","message":"Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"}],"finish_reason":"COMPLETE","meta":{"api_version":{"version":"1"},"billed_units":{"input_tokens":147,"output_tokens":23},"tokens":{"input_tokens":717,"output_tokens":25},"cached_tokens":0}}
+        )
+
+)
+
+[2026-03-05 05:51:13] Array
+(
+    [AI_INPUT] => Hai
+    [AI_REPLY] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+)
+
+[2026-03-05 05:51:19] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 05:51:20] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:02:36] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:02:40] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:02:49] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:02:55] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:03:06] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:03:10] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Hai"}
+)
+
+[2026-03-05 07:03:13] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Hai
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini?
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hau
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 200
+            [error] => 
+            [raw] => {"response_id":"2c1b8f7b-31f5-4a38-b60e-00288a02e284","text":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊","generation_id":"728f0a69-66b1-482f-980b-4314beea3ffe","chat_history":[{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini?"},{"role":"USER","message":"Hau"},{"role":"CHATBOT","message":"Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"}],"finish_reason":"COMPLETE","meta":{"api_version":{"version":"1"},"billed_units":{"input_tokens":102,"output_tokens":23},"tokens":{"input_tokens":672,"output_tokens":25},"cached_tokens":0}}
+        )
+
+)
+
+[2026-03-05 07:03:13] Array
+(
+    [AI_INPUT] => Hai
+    [AI_REPLY] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+)
+
+[2026-03-05 07:03:19] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:03:20] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:03:46] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:03:50] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:04:29] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 07:06:52] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 07:07:19] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:07:21] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:13:04] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 07:13:59] Array
+(
+    [RAW_INPUT] => {"visitor_id":"rgcs9bm7zy","message":"__load__"}
+)
+
+[2026-03-05 07:14:00] Array
+(
+    [RAW_INPUT] => {"visitor_id":"rgcs9bm7zy","message":"__load__"}
+)
+
+[2026-03-05 07:14:31] Array
+(
+    [RAW_INPUT] => {"visitor_id":"rgcs9bm7zy","message":"__load__"}
+)
+
+[2026-03-05 07:14:36] Array
+(
+    [RAW_INPUT] => {"visitor_id":"rgcs9bm7zy","message":"__load__"}
+)
+
+[2026-03-05 07:15:25] Array
+(
+    [RAW_INPUT] => {"visitor_id":"rgcs9bm7zy","message":"__load__"}
+)
+
+[2026-03-05 07:16:14] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:16:17] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:16:49] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:16:50] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:17:14] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:17:16] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:17:39] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Helo"}
+)
+
+[2026-03-05 07:17:42] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Helo
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini?
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hau
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 200
+            [error] => 
+            [raw] => {"response_id":"b3f405a7-48ac-4cfa-9424-3e9f42c360c2","text":"Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊","generation_id":"d9f5178b-b4b2-493b-b07d-c38dafdcdf07","chat_history":[{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini?"},{"role":"USER","message":"Hau"},{"role":"CHATBOT","message":"Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Helo"},{"role":"CHATBOT","message":"Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"}],"finish_reason":"COMPLETE","meta":{"api_version":{"version":"1"},"billed_units":{"input_tokens":113,"output_tokens":23},"tokens":{"input_tokens":683,"output_tokens":26},"cached_tokens":0}}
+        )
+
+)
+
+[2026-03-05 07:17:42] Array
+(
+    [AI_INPUT] => Helo
+    [AI_REPLY] => Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+)
+
+[2026-03-05 07:18:01] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 07:18:02] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:29:36] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:29:46] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:29:49] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:30:11] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Sore"}
+)
+
+[2026-03-05 10:42:39] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:43:05] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:43:05] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 10:43:13] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Hai"}
+)
+
+[2026-03-05 11:36:58] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 11:37:04] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 11:37:18] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 11:37:39] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 11:37:57] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 11:38:09] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 11:38:14] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 11:39:43] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 11:39:51] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 11:40:04] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Sore"}
+)
+
+[2026-03-05 14:05:47] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 14:05:56] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 14:06:01] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 14:06:16] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"Hai"}
+)
+
+[2026-03-05 14:06:48] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 14:06:52] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 14:07:04] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"Hai"}
+)
+
+[2026-03-05 14:07:35] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:07:51] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:08:03] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Iya.."}
+)
+
+[2026-03-05 14:18:36] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:22:06] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:29:38] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:31:20] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:38:21] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 14:38:25] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 15:17:53] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 15:19:18] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 15:21:23] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 15:23:12] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 15:23:24] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 15:23:37] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Met sore"}
+)
+
+[2026-03-05 15:23:37] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Met sore
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hau
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Sepertinya ada kesalahan ketik. Apakah Anda ingin bertanya atau mengobrol tentang sesuatu? Saya siap membantu!
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Helo
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 0
+            [error] => Couldn't resolve host 'api.cohere.com'
+            [raw] => 
+        )
+
+)
+
+[2026-03-05 15:23:37] Array
+(
+    [AI_INPUT] => Met sore
+    [AI_REPLY] => Cohere CURL error: Couldn't resolve host 'api.cohere.com'
+)
+
+[2026-03-05 16:35:34] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 17:28:45] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-05 18:06:06] Array
+(
+    [RAW_INPUT] => {"visitor_id":"t2wlv94sovm","message":"__load__"}
+)
+
+[2026-03-05 18:10:07] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-09 18:26:04] Array
+(
+    [RAW_INPUT] => {"visitor_id":"rgcs9bm7zy","message":"__load__"}
+)
+
+[2026-03-11 01:43:31] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 01:43:50] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 02:11:08] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 02:11:28] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 03:18:51] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 03:18:54] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 03:19:15] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__"}
+)
+
+[2026-03-11 06:43:23] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 06:43:36] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 06:43:45] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 06:44:09] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Iya met siang","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 06:44:15] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Iya met siang
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? 😊
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Helo
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Met sore
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Cohere CURL error: Couldn't resolve host 'api.cohere.com'
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 200
+            [error] => 
+            [raw] => {"response_id":"d4fc4265-a46f-4503-b51c-0685636e7921","text":"Met siang juga! Ada rencana menarik untuk siang ini? Atau mungkin ada pertanyaan atau topik yang ingin dibahas? 😊","generation_id":"f3d4a33b-1103-4321-9cf8-4ac1d39ac463","chat_history":[{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Helo"},{"role":"CHATBOT","message":"Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Met sore"},{"role":"CHATBOT","message":"Cohere CURL error: Couldn't resolve host 'api.cohere.com'"},{"role":"USER","message":"Iya met siang"},{"role":"CHATBOT","message":"Met siang juga! Ada rencana menarik untuk siang ini? Atau mungkin ada pertanyaan atau topik yang ingin dibahas? 😊"}],"finish_reason":"COMPLETE","meta":{"api_version":{"version":"1"},"billed_units":{"input_tokens":122,"output_tokens":26},"tokens":{"input_tokens":691,"output_tokens":28},"cached_tokens":0}}
+        )
+
+)
+
+[2026-03-11 06:44:15] Array
+(
+    [AI_INPUT] => Iya met siang
+    [AI_REPLY] => Met siang juga! Ada rencana menarik untuk siang ini? Atau mungkin ada pertanyaan atau topik yang ingin dibahas? 😊
+)
+
+[2026-03-11 19:45:41] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 19:45:51] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"__load__","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 19:46:09] Array
+(
+    [RAW_INPUT] => {"visitor_id":"23lbg74qllc","message":"Selamat malam","timezone":"Asia/Jakarta"}
+)
+
+[2026-03-11 19:46:11] Array
+(
+    [Cohere_REQUEST] => Array
+        (
+            [url] => https://api.cohere.com/v1/chat
+            [method] => POST
+            [payload] => Array
+                (
+                    [model] => command-a-03-2025
+                    [message] => Selamat malam
+                    [chat_history] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [1] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [2] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Hai
+                                )
+
+                            [3] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [4] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Helo
+                                )
+
+                            [5] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊
+                                )
+
+                            [6] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Met sore
+                                )
+
+                            [7] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Cohere CURL error: Couldn't resolve host 'api.cohere.com'
+                                )
+
+                            [8] => Array
+                                (
+                                    [role] => USER
+                                    [message] => Iya met siang
+                                )
+
+                            [9] => Array
+                                (
+                                    [role] => CHATBOT
+                                    [message] => Met siang juga! Ada rencana menarik untuk siang ini? Atau mungkin ada pertanyaan atau topik yang ingin dibahas? 😊
+                                )
+
+                        )
+
+                    [preamble] => Kamu adalah asisten AI yang ramah dan membantu.
+                )
+
+        )
+
+    [Cohere_RESPONSE] => Array
+        (
+            [status] => 200
+            [error] => 
+            [raw] => {"response_id":"3ed4b210-ee11-4912-b7db-285d1e797fa9","text":"Selamat malam! Semoga malam Anda menyenangkan dan penuh ketenangan. Ada yang bisa saya bantu atau topik yang ingin dibahas sebelum tidur? 🌙✨","generation_id":"59ec2683-feef-46b4-932e-a2de22c9cb9c","chat_history":[{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Hai"},{"role":"CHATBOT","message":"Hai! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Helo"},{"role":"CHATBOT","message":"Halo! Ada yang bisa saya bantu hari ini? Atau mungkin Anda hanya ingin mengobrol? 😊"},{"role":"USER","message":"Met sore"},{"role":"CHATBOT","message":"Cohere CURL error: Couldn't resolve host 'api.cohere.com'"},{"role":"USER","message":"Iya met siang"},{"role":"CHATBOT","message":"Met siang juga! Ada rencana menarik untuk siang ini? Atau mungkin ada pertanyaan atau topik yang ingin dibahas? 😊"},{"role":"USER","message":"Selamat malam"},{"role":"CHATBOT","message":"Selamat malam! Semoga malam Anda menyenangkan dan penuh ketenangan. Ada yang bisa saya bantu atau topik yang ingin dibahas sebelum tidur? 🌙✨"}],"finish_reason":"COMPLETE","meta":{"api_version":{"version":"1"},"billed_units":{"input_tokens":137,"output_tokens":36},"tokens":{"input_tokens":706,"output_tokens":38},"cached_tokens":0}}
+        )
+
+)
+
+[2026-03-11 19:46:11] Array
+(
+    [AI_INPUT] => Selamat malam
+    [AI_REPLY] => Selamat malam! Semoga malam Anda menyenangkan dan penuh ketenangan. Ada yang bisa saya bantu atau topik yang ingin dibahas sebelum tidur? 🌙✨
+)
+

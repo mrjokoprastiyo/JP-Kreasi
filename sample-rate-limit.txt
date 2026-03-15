@@ -1,0 +1,45 @@
+function checkRateLimit(array $client, array $product): bool
+{
+    // 1. Pastikan product punya rate limit
+    if (empty($product['rate_limit'])) {
+        return true; // unlimited
+    }
+
+    // 2. Tentukan period key
+    $periodKey = buildPeriodKey($product['rate_period']);
+
+    // 3. Ambil counter
+    $counter = getRateCounter(
+        $client['id'],
+        $product['id'],
+        $periodKey
+    );
+
+    // 4. Jika belum ada, buat baru
+    if (!$counter) {
+        createRateCounter(
+            $client['id'],
+            $product['id'],
+            $periodKey,
+            calculateExpiry($product['rate_period'])
+        );
+        return true;
+    }
+
+    // 5. Cek limit
+    if ($counter['count'] >= $product['rate_limit']) {
+        return false;
+    }
+
+    // 6. Increment counter
+    incrementRateCounter($counter['id']);
+
+    return true;
+}
+
+buildPeriodKey('day')      → 2026-01-15
+buildPeriodKey('hour')     → 2026-01-15-14
+buildPeriodKey('minute')   → 2026-01-15-14-30
+
+calculateExpiry('day')     → today 23:59:59
+calculateExpiry('hour')    → end of hour

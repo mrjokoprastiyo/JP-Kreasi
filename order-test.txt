@@ -1,0 +1,553 @@
+Saya pakai facebook login untuk isi form handler otomatis dari setelah login,    
+Sesuaikan form handlernya, tambahkan page id maupun page name, dan hapus verify token, karena user gk perlu lagi memverify lagi dari developers.facebook  karena sudah numpang aplikasi kita  
+    
+    
+order.php:    
+<?php
+session_start();
+
+require_once '../config.php';
+require_once '../core/auth.php';
+require_once '../core/db.php';
+require_once '../core/settings-loader.php';
+
+require_once '../core/helpers/html.php';
+require_once '../core/helpers/asset.php';
+require_once '../core/helpers/redirect.php';
+require_once '../core/helpers/product-flow.php';
+
+require_once '../core/services/ClientService.php';
+
+require_once '../handlers/DesignOrderHandler.php';
+require_once '../handlers/ChatbotWebHandler.php';
+
+require_once '../handlers/ChatbotMessengerHandler.php';
+require_once '../handlers/ChatbotCommentHandler.php';
+require_once '../handlers/ChatbotWhatsAppHandler.php';
+require_once '../handlers/ChatbotTelegramHandler.php';
+
+require_once '../handlers/AutomationHandler.php';
+
+
+Auth::check();
+
+$user_id = $_SESSION['user']['id'];
+
+$product = DB::fetch(
+    "SELECT * FROM products WHERE id=?",
+    [$_GET['product_id']]
+);
+
+if (!$product)
+    die('Produk tidak valid');
+
+
+$flow = resolveFlow($product);
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST')
+{
+    match ($flow)
+    {
+        'DESIGN_ORDER'
+            => DesignOrderHandler::handle($user_id, $product),
+
+        'CHATBOT_WEB'
+            => ChatbotWebHandler::handle($user_id, $product),
+
+        'CHATBOT_CHANNEL'
+            => match ($product['service'])
+            {
+                'messenger'
+                    => ChatbotMessengerHandler::handle($user_id, $product),
+
+                'comment'
+                    => ChatbotCommentHandler::handle($user_id, $product),
+
+                'whatsapp'
+                    => ChatbotWhatsAppHandler::handle($user_id, $product),
+
+                'telegram'
+                    => ChatbotTelegramHandler::handle($user_id, $product),
+
+                default => die('Service tidak valid')
+            },
+
+        'AUTOMATION_NOTIFICATION'
+            => AutomationHandler::handle($user_id, $product),
+
+        default => die('Flow tidak valid')
+    };
+}
+
+
+
+include 'header.php';
+include 'sidebar.php';
+
+
+match ($flow)
+{
+    FLOW_DESIGN
+        => include 'forms/design-order.php',
+
+    FLOW_CHATBOT_WEB
+        => include 'forms/chatbot-web.php',
+
+    FLOW_CHATBOT_CHANNEL
+        => include 'forms/chatbot-channel.php',
+
+    FLOW_AUTOMATION
+        => include 'forms/automation.php',
+
+    default => die('Form tidak tersedia')
+};
+
+
+include 'footer.php';
+    
+    
+form/chatbot-channel.php:    
+<?php    
+// Pastikan variabel $service dan $product sudah didefinisikan sebelumnya    
+$service = $product['service'];     
+$aiRows = DB::fetchAll("SELECT provider_slug, provider_name, model FROM ai_configs WHERE status = 'active' ORDER BY provider_name ASC");    
+$aiProviders = [];    
+foreach ($aiRows as $row) {    
+    $aiProviders[$row['provider_slug']]['name'] = $row['provider_name'];    
+    $aiProviders[$row['provider_slug']]['models'][] = $row['model'];    
+}       
+?>    
+    
+<div id="fb-root"></div>    
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>    
+    
+<main class="user-content">    
+    <header class="page-header">    
+        <h1>Setup Chatbot Channel</h1>    
+    </header>    
+    
+    <form method="POST" class="form-grid">    
+        <input type="hidden" name="fb_short_token" id="fb_short_token">    
+    
+        <section class="card">    
+            <h3>Informasi Bot</h3>    
+            <label>Nama Bot / Project</label>    
+            <input type="text" name="name" required placeholder="Contoh: CS Otomatis">    
+                
+            <label>Channel</label>    
+            <input type="text" value="<?= strtoupper($service) ?>" disabled style="background: #f4f4f4;">    
+                
+            <label>Provider</label>    
+            <select name="provider" id="providerSelect" required>    
+<?php if ($service === 'messenger'): ?>
+    <option value="meta">Meta (Facebook Messenger)</option>
+
+<?php elseif ($service === 'comment'): ?>
+    <option value="meta">Meta (Facebook Comment Automation)</option>
+
+<?php elseif ($service === 'telegram'): ?> 
+                    <option value="telegram">Telegram Bot API</option>    
+                <?php elseif ($service === 'whatsapp'): ?>    
+                    <option value="meta">WhatsApp Cloud API (Official)</option>    
+                    <option value="wablas">Wablas</option>    
+                    <option value="fonnte">Fonnte</option>    
+                <?php endif; ?>    
+            </select>    
+        </section>    
+    
+        <section class="card">    
+            <h3>Konfigurasi Koneksi</h3>    
+                
+            <?php if ($service === 'messenger' || $service === 'comment'): ?>
+<div id="messenger-meta-fields">
+    <button type="button"
+            onclick="launchFBLogin('<?= $service ?>')"
+            class="btn secondary">
+        🔗 Connect Facebook Page
+    </button>
+    <div id="fb-page-list" style="display:none;margin-top:15px;">
+
+        <label>Pilih Facebook Page</label>
+
+        <select name="page_id" id="pageSelect"></select>
+
+        <input type="hidden"
+               name="page_name"
+               id="page_name">
+
+        <input type="hidden"
+               name="page_access_token"
+               id="page_access_token">
+                
+                <p class="helper-text">Halaman ini akan otomatis diintegrasikan dengan AI Engine pilihan Anda.</p>
+
+    </div>
+
+</div>
+    
+            <?php elseif ($service === 'telegram'): ?>    
+                <label>Bot Token</label>    
+                <input type="text" name="bot_token" placeholder="123456:ABC-DEF...">    
+    
+            <?php elseif ($service === 'whatsapp'): ?>    
+                <div id="wa-meta-connect" style="display:none; margin-bottom:15px;">    
+                    <button type="button" onclick="launchFBLogin('whatsapp')" class="btn secondary">🔗 Connect WhatsApp Business</button>    
+                </div>    
+    
+                <div id="wa-manual-fields">    
+                    <label>Phone Number ID</label>    
+                    <input type="text" name="phone_number_id" id="wa_phone_number_id">    
+                        
+                    <label>WhatsApp Business Account ID</label>    
+                    <input type="text" name="waba_id" id="wa_waba_id">    
+                        
+                    <label>Access Token / API Key</label>    
+                    <textarea name="access_token" id="wa_access_token" rows="3" placeholder="EAAB..."></textarea>    
+                </div>    
+            <?php endif; ?>    
+        </section>    
+    
+        <section class="card">    
+            <h3>AI Engine</h3>    
+            <label>AI Provider</label>    
+            <select name="ai_provider" id="aiProvider" required>    
+                <option value="">-- Pilih Provider --</option>    
+                <?php foreach ($aiProviders as $slug => $p): ?>    
+                    <option value="<?= htmlspecialchars($slug) ?>"><?= htmlspecialchars($p['name']) ?></option>    
+                <?php endforeach; ?>    
+            </select>    
+    
+            <label>AI Model</label>    
+            <select name="ai_model" id="aiModel" required>    
+                <option value="">-- Pilih Model --</option>    
+            </select>    
+        </section>    
+    
+        <section class="card highlight">    
+            <button type="submit" class="btn primary" id="btnSubmit">💾 Simpan & Aktifkan</button>    
+        </section>    
+    </form>    
+</main>    
+    
+<script>    
+// 1. Initialize Facebook SDK    
+window.fbAsyncInit = function() {    
+    FB.init({    
+        appId      : 'YOUR_APP_ID_HERE', // GANTI DENGAN APP ID ANDA    
+        cookie     : true,    
+        xfbml      : true,    
+        version    : 'v18.0'    
+    });    
+};    
+    
+// 2. Facebook Login & Embedded Signup Logic    
+function launchFBLogin(type)
+{
+    let scopes = '';
+
+    if (type === 'messenger')
+    {
+        scopes = 'pages_show_list,pages_messaging,pages_read_engagement,pages_manage_metadata';
+    }
+    else if (type === 'comment')
+    {
+        scopes = 'pages_show_list,pages_read_engagement,pages_manage_engagement';
+    }
+    else if (type === 'whatsapp')
+    {
+        scopes = 'whatsapp_business_management,whatsapp_business_messaging';
+    }
+
+    FB.login(function(response)
+    {
+        if (response.authResponse)
+        {
+            const userToken = response.authResponse.accessToken;
+
+            document.getElementById('fb_short_token').value = userToken;
+
+            if (type === 'messenger' || type === 'comment')
+                fetchPages(userToken);
+
+            else if (type === 'whatsapp')
+                fetchWABA(userToken);
+        }
+
+    }, { scope: scopes });
+}
+    
+// 3. Fetch WhatsApp Details (Embedded Signup)    
+function fetchWABA(token) {    
+    FB.api('/me/whatsapp_business_accounts', { access_token: token }, function(res) {    
+        if (res.data && res.data.length > 0) {    
+            const wabaId = res.data[0].id;    
+            document.getElementById('wa_waba_id').value = wabaId;    
+            document.getElementById('wa_access_token').value = token; // Sementara pake short token    
+                
+            // Get Phone Numbers    
+            FB.api(`/${wabaId}/phone_numbers`, { access_token: token }, function(pnRes) {    
+                if (pnRes.data && pnRes.data.length > 0) {    
+                    document.getElementById('wa_phone_number_id').value = pnRes.data[0].id;    
+                    alert('WhatsApp Business Connected!');    
+                }    
+            });    
+        }    
+    });    
+}    
+    
+// 4. Fetch Messenger Pages    
+function fetchPages(userToken)
+{
+    FB.api('/me/accounts',
+    { access_token: userToken },
+    function(res)
+    {
+        if (!res.data) return;
+
+        const select = document.getElementById('pageSelect');
+        const div = document.getElementById('fb-page-list');
+
+        select.innerHTML='';
+
+        res.data.forEach(page =>
+        {
+            const opt = new Option(page.name, page.id);
+
+            opt.dataset.token = page.access_token;
+            opt.dataset.name  = page.name;
+
+            select.add(opt);
+        });
+
+        div.style.display='block';
+
+        select.onchange = function()
+        {
+            const opt = select.options[select.selectedIndex];
+
+            document.getElementById('page_access_token').value =
+                opt.dataset.token;
+
+            document.getElementById('page_name').value =
+                opt.dataset.name;
+        };
+
+        select.onchange();
+    });
+}
+    
+// 5. Form UI Logic    
+const waProvider = document.getElementById('providerSelect');    
+const waManualFields = document.getElementById('wa-manual-fields');    
+const waMetaConnect = document.getElementById('wa-meta-connect');    
+    
+if(waProvider) {    
+    waProvider.addEventListener('change', () => {    
+        const isMeta = (waProvider.value === 'meta');    
+        if (waMetaConnect) waMetaConnect.style.display = isMeta ? 'block' : 'none';    
+        // Optional: hide manual fields if meta, but good to keep for debugging    
+    });    
+    // Trigger on load    
+    waProvider.dispatchEvent(new Event('change'));    
+}    
+    
+// 6. AI Engine Logic (Keep existing)    
+const aiData = <?= json_encode($aiProviders) ?>;    
+const providerSelect = document.getElementById('aiProvider');    
+const modelSelect = document.getElementById('aiModel');    
+    
+providerSelect.addEventListener('change', () => {    
+    const provider = providerSelect.value;    
+    modelSelect.innerHTML = '<option value="">-- Pilih Model --</option>';    
+    if (!provider || !aiData[provider]) return;    
+    aiData[provider].models.forEach(model => {    
+        modelSelect.add(new Option(model, model));    
+    });    
+});    
+</script>    
+    
+    
+Handler:    
+<?php
+
+class ChatbotChannelHandler
+{
+    private const FB_APP_ID     = 'YOUR_APP_ID';
+    private const FB_APP_SECRET = 'YOUR_APP_SECRET';
+
+
+    public static function handle(int $user_id, array $product): never
+    {
+        DB::begin();
+
+        try {
+
+            $init     = ClientService::initialStatus($product);
+
+            $service  = $product['service'];
+
+            $provider = $_POST['provider'] ?? 'meta';
+
+
+            $credentials = match($service)
+            {
+
+                'messenger' => self::messengerCredentials(),
+
+                'whatsapp'  => self::whatsappCredentials(),
+
+                'telegram'  => self::telegramCredentials(),
+
+                default => []
+            };
+
+
+            $meta = $init['meta'];
+
+            $meta['ai_engine'] =
+            [
+                'provider' => $_POST['ai_provider'] ?? null,
+                'model'    => $_POST['ai_model'] ?? null
+            ];
+
+
+            DB::execute("
+                INSERT INTO clients
+                (
+                    user_id,
+                    product_id,
+                    name,
+                    service,
+                    provider,
+                    credentials,
+                    api_key,
+                    status,
+                    expired_at,
+                    meta
+                )
+                VALUES (?,?,?,?,?,?,?,?,?,?)
+            ",
+            [
+                $user_id,
+                $product['id'],
+                $_POST['name'],
+
+                $service,
+                $provider,
+
+                json_encode($credentials),
+
+                ClientService::apiKey(),
+
+                $init['status'],
+                $init['expired_at'],
+
+                json_encode($meta)
+            ]);
+
+
+            $id = DB::lastId();
+
+            DB::commit();
+
+
+            redirect("client-detail.php?id={$id}");
+
+            exit;
+
+        }
+        catch(Throwable $e)
+        {
+            DB::rollback();
+
+            die($e->getMessage());
+        }
+    }
+
+
+
+    private static function messengerCredentials(): array
+    {
+        $page_id   = $_POST['page_id'] ?? '';
+        $page_name = $_POST['page_name'] ?? '';
+
+        $page_token = $_POST['page_access_token'] ?? '';
+
+
+        if (!$page_id || !$page_token)
+            throw new Exception("Facebook Page belum dipilih");
+
+
+        $longToken =
+            self::exchangeFBToken($page_token)
+            ?? $page_token;
+
+
+        return
+        [
+            'page_id'      => $page_id,
+
+            'page_name'    => $page_name,
+
+            'access_token' => $longToken
+        ];
+    }
+
+
+
+    private static function whatsappCredentials(): array
+    {
+        return
+        [
+            'phone_number_id'
+                => $_POST['phone_number_id'] ?? '',
+
+            'waba_id'
+                => $_POST['waba_id'] ?? '',
+
+            'access_token'
+                => $_POST['access_token'] ?? ''
+        ];
+    }
+
+
+
+    private static function telegramCredentials(): array
+    {
+        return
+        [
+            'bot_token'
+                => $_POST['bot_token'] ?? ''
+        ];
+    }
+
+
+
+    private static function exchangeFBToken(string $token): ?string
+    {
+        $url =
+        "https://graph.facebook.com/v18.0/oauth/access_token?"
+        . http_build_query(
+        [
+            'grant_type'        => 'fb_exchange_token',
+
+            'client_id'        => self::FB_APP_ID,
+
+            'client_secret'    => self::FB_APP_SECRET,
+
+            'fb_exchange_token'=> $token
+        ]);
+
+
+        $res = file_get_contents($url);
+
+        if (!$res) return null;
+
+
+        $json = json_decode($res,true);
+
+        return $json['access_token'] ?? null;
+    }
+
+}

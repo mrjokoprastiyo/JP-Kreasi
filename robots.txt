@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mrjokoprastiyo.github.io/JP-Desainer-Kreatif/sitemap.xml
