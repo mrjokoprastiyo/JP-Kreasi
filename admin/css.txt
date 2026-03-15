@@ -1,0 +1,201 @@
+
+<style>
+    :root {
+        --primary-color: #4f46e5;
+        --border-color: #e2e8f0;
+        --bg-card: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+    }
+
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+    .settings-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .settings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .card-full {
+        grid-column: 1 / -1;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.1em;
+        color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        font-size: 0.85em;
+        margin-bottom: 6px;
+        color: var(--text-main);
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 0.9em;
+        box-sizing: border-box;
+        transition: border-color 0.2s;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        ring: 2px var(--primary-color);
+    }
+
+    .btn-save {
+        background: var(--primary-color);
+        color: white;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1em;
+        width: 100%;
+        margin-top: 20px;
+        transition: background 0.3s;
+    }
+
+    .btn-save:hover {
+        background: #4338ca;
+    }
+
+    small {
+        display: block;
+        margin-top: 5px;
+        color: var(--text-muted);
+        font-size: 0.75em;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #f1f5f9;
+        margin: 20px 0;
+    }
+
+    @media (max-width: 600px) {
+        .settings-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<style>
+    /* Table Enhancements */
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .status-badge {
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 0.75em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .status-active { background: #dcfce7; color: #15803d; }
+    .status-inactive { background: #fee2e2; color: #b91c1c; }
+
+    .price-text {
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 600;
+        color: #0f172a;
+    }
+
+    .category-tag {
+        background: #f1f5f9;
+        color: #475569;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.8em;
+    }
+
+    .btn-create {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #4f46e5;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+    .btn-create:hover { background: #4338ca; transform: translateY(-1px); }
+
+    .action-links {
+        display: flex;
+        gap: 10px;
+    }
+    .action-edit { color: #4f46e5; text-decoration: none; font-weight: 500; }
+    .action-delete { color: #ef4444; text-decoration: none; font-weight: 500; }
+</style>
+
+<style>
+    .client-card-info { display: flex; align-items: center; gap: 10px; }
+    .bot-avatar { 
+        width: 40px; height: 40px; border-radius: 10px; border: 1px solid #e2e8f0; 
+        object-fit: cover; background: #f1f5f9;
+    }
+    .badge-service { 
+        font-size: 0.7em; padding: 2px 6px; border-radius: 4px; 
+        background: #eef2ff; color: #4f46e5; font-weight: bold; text-transform: uppercase;
+    }
+    .stats-mini { font-size: 0.8em; color: #64748b; margin-top: 4px; }
+    .status-pending { background: #fef3c7; color: #92400e; }
+    .status-expired { background: #f1f5f9; color: #475569; }
+    .status-suspended { background: #fee2e2; color: #991b1b; }
+</style>
