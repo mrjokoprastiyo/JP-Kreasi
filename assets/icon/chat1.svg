@@ -1,0 +1,42 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path d="M18 20
+           C18 16.7 20.7 14 24 14H40
+           C43.3 14 46 16.7 46 20V36
+           C46 39.3 43.3 42 40 42H28
+           L22 48V42H24
+           C20.7 42 18 39.3 18 36Z"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linejoin="round"/>
+  <circle cx="28" cy="30" r="2.3" fill="currentColor">
+    <animate attributeName="opacity"
+      values="0.4;1;0.4"
+      dur="1.6s"
+      repeatCount="indefinite"/>
+  </circle>
+  <circle cx="36" cy="30" r="2.3" fill="currentColor">
+    <animate attributeName="opacity"
+      values="1;0.4;1"
+      dur="1.6s"
+      repeatCount="indefinite"/>
+  </circle>
+  <path d="M30 30H34"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round">
+    <animate attributeName="opacity"
+      values="0.2;1;0.2"
+      dur="1.2s"
+      repeatCount="indefinite"/>
+  </path>
+</svg>
